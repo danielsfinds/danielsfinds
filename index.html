@@ -5,15 +5,15 @@
 <title>Daniel's Finds — Items I've received in hand or they're from the most reputable sellers</title>
 <style>
   :root{
-    --paper: #0B2540;
-    --paper-dark: #081C33;
-    --ink: #D6E6F2;
-    --ink-soft: #9AC0DD;
-    --blaze: #6FAAD6;
-    --olive: #4A8FC2;
-    --tag-yellow: #123655;
-    --line: #2C5578;
-    --card: #123655;
+    --paper: #D6E6F2;
+    --paper-dark: #C3DAEA;
+    --ink: #0F2A47;
+    --ink-soft: #45607C;
+    --blaze: #0B3D6B;
+    --olive: #2E5C8A;
+    --tag-yellow: #7FB3D5;
+    --line: #A9C6DE;
+    --card: #F1F7FB;
     --radius: 2px;
     --mono: "JetBrains Mono", "IBM Plex Mono", Menlo, Consolas, monospace;
     --display: "Arial Narrow", "Helvetica Neue Condensed", "Oswald", sans-serif;
@@ -117,7 +117,7 @@
     font-weight:700;
   }
   .btn-add{background:var(--blaze);color:var(--card);}
-  .btn-add:hover{background:#8FC0E3;}
+  .btn-add:hover{background:#08284A;}
   .btn-ghost{background:transparent;border:1px solid var(--ink);color:var(--ink);}
   .btn-ghost:hover{background:var(--ink);color:var(--card);}
 
@@ -364,6 +364,7 @@
     <select id="filterBrand"><option value="">All brands</option></select>
     <select id="filterColor"><option value="">All colours</option></select>
     <select id="displayCurrency" title="Display currency">
+      <option value="AUD">$ AUD</option>
       <option value="CAD">$ CAD</option>
       <option value="CNY">¥ CNY</option>
       <option value="EUR">€ EUR</option>
@@ -447,6 +448,7 @@
       <div class="price-row">
         <input type="text" id="f_price" placeholder="e.g. 120">
         <select id="f_currency">
+          <option value="AUD">AUD</option>
           <option value="CAD">CAD</option>
           <option value="CNY">CNY</option>
           <option value="EUR">EUR</option>
@@ -484,8 +486,8 @@ let editingId = null;
 let currentImageData = '';
 
 // Approximate exchange rates (value of 1 unit in GBP). Edit these if you want more precise rates.
-const RATES_TO_GBP = { GBP: 1, USD: 0.79, EUR: 0.855, CNY: 0.109, JPY: 0.0053, PLN: 0.2, CAD: 0.58 };
-const CURRENCY_SYMBOL = { GBP: '£', USD: '$', EUR: '€', CNY: '¥', JPY: '¥', PLN: 'zł', CAD: '$' };
+const RATES_TO_GBP = { GBP: 1, USD: 0.79, EUR: 0.855, CNY: 0.109, JPY: 0.0053, PLN: 0.2, CAD: 0.58, AUD: 0.52 };
+const CURRENCY_SYMBOL = { GBP: '£', USD: '$', EUR: '€', CNY: '¥', JPY: '¥', PLN: 'zł', CAD: '$', AUD: '$' };
 
 function convert(amount, from, to){
   const n = parseFloat(amount);
