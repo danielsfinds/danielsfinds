@@ -19,7 +19,7 @@
     --card: #123655;
     --btn-ink: #0B2540;
     --radius: 12px;
-    --radius-sm: 6px;
+    --radius-sm: 999px;
     --mono: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --display: "Poppins", "Segoe UI", sans-serif;
   }
@@ -347,7 +347,7 @@
   /* IMAGE PASTE ZONE */
   .paste-zone{
     border:1px dashed var(--ink);
-    border-radius:var(--radius);
+    border-radius:0;
     background:var(--paper);
     padding:14px;
     text-align:center;
@@ -431,7 +431,7 @@
     font-family:var(--mono);
     font-size:13px;
     color:var(--ink);
-    border-radius:var(--radius-sm);
+    border-radius:0;
   }
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .modal-actions{
@@ -486,10 +486,10 @@
       <option value="GBP">£ GBP</option>
       <option value="JPY">¥ JPY</option>
       <option value="PLN">zł PLN</option>
-      <option value="USD">$ USD</option>
+      <option value="USD" selected>$ USD</option>
     </select>
-    <button class="btn btn-ghost" id="clearFilters">Clear</button>
     <button class="btn btn-ghost" id="shuffleItems">Shuffle</button>
+    <button class="btn btn-ghost" id="clearFilters">Clear</button>
     <button class="btn btn-add" id="openAdd">+ Log new item</button>
   </div>
 
