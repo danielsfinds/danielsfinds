@@ -490,6 +490,7 @@
     </select>
     <button class="btn btn-ghost" id="shuffleItems">Shuffle</button>
     <button class="btn btn-ghost" id="clearFilters">Clear</button>
+    <button class="btn btn-add" id="openAdd">+ Log new item</button>
   </div>
 
   <div class="grid" id="grid"></div>
@@ -738,6 +739,10 @@ function render(){
 
   grid.innerHTML = filtered.map(i => `
     <div class="tag" data-id="${i.id}">
+      <div class="tag-actions">
+        <button class="icon-btn" onclick="editItem('${i.id}')">✎</button>
+        <button class="icon-btn" onclick="deleteItem('${i.id}')">✕</button>
+      </div>
       <div class="tag-img" style="${i.image ? `background-image:url('${escapeHtml(i.image)}')` : ''}">
         ${i.image ? '' : 'No image'}
       </div>
